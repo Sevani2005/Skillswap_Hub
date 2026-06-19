@@ -12,7 +12,8 @@ const generateToken = (id) => {
 // @route   POST /api/auth/register
 export const register = async (req, res, next) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email: rawEmail, password } = req.body;
+    const email = rawEmail?.trim().toLowerCase();
 
     const exists = await User.findOne({ email });
     if (exists) {
@@ -41,7 +42,8 @@ export const register = async (req, res, next) => {
 // @route   POST /api/auth/login
 export const login = async (req, res, next) => {
   try {
-    const { email, password } = req.body;
+    const { email: rawEmail, password } = req.body;
+    const email = rawEmail?.trim().toLowerCase();
     const user = await User.findOne({ email }).select('+password');
 
     if (!user) {

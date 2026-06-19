@@ -19,6 +19,11 @@ export const errorHandler = (err, req, res, next) => {
       .join(', ');
   }
 
+
+  if (err.name === 'CastError') {
+    statusCode = 400;
+    message = 'Invalid resource ID';
+  }
   // JWT errors
   if (err.name === 'JsonWebTokenError') {
     statusCode = 401;
