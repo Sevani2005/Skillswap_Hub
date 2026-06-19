@@ -52,13 +52,13 @@ const Register = () => {
             </div>
             <div>
               <label className="form-label">Email</label>
-              <input name="email" type="email" value={form.email} onChange={handleChange} className="input-field" required />
+              <input name="email" type="email" autoComplete="email" value={form.email} onChange={handleChange} className="input-field" required />
             </div>
             <div>
               <label className="form-label">Password</label>
               <div className="relative">
                 <input 
-                  name="password" 
+                  name="password" autoComplete="new-password" 
                   type={showPassword ? "text" : "password"} 
                   value={form.password} 
                   onChange={handleChange} 
