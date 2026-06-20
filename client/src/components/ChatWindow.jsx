@@ -83,7 +83,7 @@ const ChatWindow = ({ partner, onBack }) => {
   const isOnline = onlineUsers[partner?._id] ?? partner?.isOnline;
 
   return (
-    <div className="flex flex-col h-full glass-card overflow-hidden">
+    <div className="flex flex-col h-full min-h-0 glass-card overflow-hidden">
       <div className="flex items-center gap-3 p-4 border-b border-gray-200 dark:border-gray-700">
         {onBack && (
           <button onClick={onBack} className="lg:hidden text-primary-600 text-sm font-medium">

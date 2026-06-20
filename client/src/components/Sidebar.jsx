@@ -27,7 +27,7 @@ const Sidebar = () => {
     <motion.aside
       initial={{ x: -20, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      className="hidden lg:flex flex-col w-64 glass-card p-4 h-fit sticky top-24"
+      className="hidden lg:flex flex-col w-64 shrink-0 glass-card p-4 h-fit sticky top-24"
     >
       <div className="flex items-center gap-3 p-3 mb-4 rounded-xl bg-primary-50 dark:bg-gray-700 dark:border dark:border-gray-600">
         <img src={getAvatarUrl(user)} alt="" className="w-12 h-12 rounded-full object-cover" />
