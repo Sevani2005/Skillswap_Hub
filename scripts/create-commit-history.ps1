@@ -23,9 +23,9 @@ function New-DatedCommit {
 
     if ($hasChanges) {
         git commit -m $Message
-        Write-Host "[OK] $Date — $Message" -ForegroundColor Green
+        Write-Host "[OK] $Date - $Message" -ForegroundColor Green
     } else {
-        Write-Host "[SKIP] $Date — no changes for: $Message" -ForegroundColor Yellow
+        Write-Host "[SKIP] $Date - no changes for: $Message" -ForegroundColor Yellow
     }
 
     Remove-Item Env:GIT_AUTHOR_DATE -ErrorAction SilentlyContinue
