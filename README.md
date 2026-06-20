@@ -42,7 +42,7 @@ skillswap/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/skillswap.git
+git clone https://github.com/Sevani2005/Skillswap_Hub.git
 cd skillswap
 ```
 
