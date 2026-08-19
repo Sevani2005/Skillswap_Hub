@@ -9,6 +9,7 @@
     "dev:client": "npm run dev --prefix client",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "seed": "npm run seed --prefix server",
+    "check-db": "npm run check-db --prefix server",
     "build": "npm run build --prefix client"
   },
   "keywords": ["skillswap", "skills", "peer-to-peer", "react", "nodejs"],

@@ -51,7 +51,7 @@ const Login = () => {
                   type={showPassword ? "text" : "password"} 
                   value={password} 
                   onChange={(e) => setPassword(e.target.value)} 
-                  className="input-field w-full pr-10" autoComplete="current-password" autoComplete="current-password" 
+                  className="input-field w-full pr-10" autoComplete="current-password" 
                   required 
                 />
                 <button
