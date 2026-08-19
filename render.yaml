@@ -1,6 +1,7 @@
 services:
   - type: web
     name: skillswap-api
+    plan: free
     runtime: node
     rootDir: server
     buildCommand: npm install
