@@ -43,6 +43,11 @@ const skillRequestSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+skillRequestSchema.index(
+  { sender: 1, receiver: 1, status: 1 },
+  { unique: true, partialFilterExpression: { status: 'pending' } }
+);
+
 export const buildEmptySessions = (count) =>
   Array.from({ length: count }, (_, i) => ({
     number: i + 1,

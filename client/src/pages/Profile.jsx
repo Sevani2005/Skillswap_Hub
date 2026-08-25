@@ -20,6 +20,7 @@ const Profile = () => {
   const [requestError, setRequestError] = useState('');
   const [loadError, setLoadError] = useState('');
   const [loading, setLoading] = useState(true);
+  const [submittingRequest, setSubmittingRequest] = useState(false);
 
   const profileId = id === 'me' ? currentUser?._id : id;
   const isOwnProfile = currentUser?._id === profile?._id;
@@ -54,6 +55,8 @@ const Profile = () => {
 
   const sendRequest = async (e) => {
     e.preventDefault();
+    if (submittingRequest) return;
+    setSubmittingRequest(true);
     setRequestError('');
     try {
       await api.post('/requests', {
@@ -65,6 +68,8 @@ const Profile = () => {
       setRequestForm({ offeredSkill: '', wantedSkill: '', message: '' });
     } catch (err) {
       setRequestError(getApiErrorMessage(err, 'Failed to send request'));
+    } finally {
+      setSubmittingRequest(false);
     }
   };
 
@@ -231,11 +236,20 @@ const Profile = () => {
                 />
               </div>
               <div className="flex gap-2">
-                <button type="button" onClick={() => setShowRequest(false)} className="btn-secondary flex-1">
+                <button 
+                  type="button" 
+                  onClick={() => setShowRequest(false)} 
+                  disabled={submittingRequest}
+                  className="btn-secondary flex-1 disabled:opacity-50"
+                >
                   Cancel
                 </button>
-                <button type="submit" className="btn-primary flex-1">
-                  Send Request
+                <button 
+                  type="submit" 
+                  disabled={submittingRequest} 
+                  className="btn-primary flex-1 disabled:opacity-50"
+                >
+                  {submittingRequest ? 'Sending...' : 'Send Request'}
                 </button>
               </div>
             </form>
