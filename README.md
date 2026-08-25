@@ -4,6 +4,12 @@ A modern full-stack peer-to-peer skill exchange platform where users trade skill
 
 ![SkillSwap](https://img.shields.io/badge/React-18-blue) ![Node.js](https://img.shields.io/badge/Node.js-Express-green) ![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-green)
 
+## 🌐 Live Demo
+
+* **Live Website (Frontend):** [https://skillswap-hub-pi.vercel.app](https://skillswap-hub-pi.vercel.app)
+* **Backend API URL:** [https://skillswap-api-8n3w.onrender.com](https://skillswap-api-8n3w.onrender.com)
+
+
 ## Features
 
 - **Authentication** — JWT-based register/login with protected routes
